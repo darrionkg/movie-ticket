@@ -22,15 +22,18 @@
 
   <div class="movieListing">
     <img src="img/ki1.jpg" alt="Kazaam Movie">
-    <p>Kazaam (/kəˈzæm/) is a 1996 American musical fantasy comedy film directed by Paul Michael Glaser, written by Christian Ford and Roger Soffer based on a story by Glaser, and starring Shaquille O'Neal as the title character, a "5,000"-year-old genie who appears from a magic boombox </p>
-    <button class="buttons normalTime" type="button" name="button">12:05pm</button>
-    <button class="buttons normalTime" type="button" name="button">2:10pm</button>
-    <button class="buttons peakTime" type="button" name="button">4:20pm</button>
-    <button class="buttons peakTime" type="button" name="button">6:30pm</button>
-    <button class="buttons normalTime" type="button" name="button">8:05pm</button>
+    <p>Kazaam (/kəˈzæm/) is a 1996 American musical fantasy comedy film directed by Paul Michael Glaser, written by Christian Ford and Roger Soffer based on a story by Glaser, and starring Shaquille O'Neal as the title character, a "5,000"-year-old genie who appears from a magic boombox.  Each ticket guarantees personal foot rub by shaq himself!!!!! </p>
+
   </div>
     <div class="container" id="tickets">
       <form id="the-form" action="index.html" method="post">
+        <select class="form-control" id="selectTime">
+          <option value="normalTime">12:05</option>
+          <option value="normalTime">2:10</option>
+          <option value="peakTime">4:20</option>
+          <option value="peakTime">6:30</option>
+          <option value="normalTime">8:05</option>
+        </select>
         <div class="row">
           <div class="col-sm">
             Children
@@ -77,7 +80,7 @@
     </div>
     <div class="col-md-6">
           <div id="show-totalPrice">
-            <p>total <span class="total"></span></p>
+            <p>Your total is: <span class="total"></span></p>
 
     </div>
 

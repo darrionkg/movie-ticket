@@ -14,46 +14,52 @@ function Ticket(childrenPrice, adultPrice, experiencedPrice) {
 }
 
 Ticket.prototype.setBasePrice = function() {
-    this.childrenPrice *= 2.00;
-    this.adultPrice *= 4.00;
-    this.experiencedPrice *= 3.00;
-    var totalPrice = this.childrenPrice + this.adultPrice + this.experiencedPrice
-    return totalPrice;
+    this.childrenPrice = 2.00;
+    this.adultPrice = 4.00;
+    this.experiencedPrice = 3.00;
+
 }
 
 Ticket.prototype.raisePrice = function() {
-  this.childrenPrice *= 4.00;
-  this.adultPrice *=6.00;
-  this.experiencedPrice *= 5.00;
-  var totalPrice = this.childrenPrice + this.adultPrice + this.experiencedPrice
-  return totalPrice;
+  this.childrenPrice = 4.00;
+  this.adultPrice =6.00;
+  this.experiencedPrice = 5.00;
 }
 
-var children = 0;
-var adult = 0;
-var experienced = 0;
-var ticket = new Ticket(children, adult, experienced);
-var total;
+Ticket.prototype.calculateTotal = function(childrenCount, adultCount, experiencedCount) {
+  var totalTickets1 = this.childrenPrice * childrenCount;
+  var totalTickets2 = this.adultPrice * adultCount;
+  var totalTickets3 = this.experiencedPrice * experiencedCount;
+  var total = totalTickets1 + totalTickets2 + totalTickets3;
+  return "$" + total;
+}
 
+  //var timeSelect = $("selectTime").val();
 $(document).ready(function() {
-  $('.normalTime').click(function() {
-    total = ticket.setBasePrice();
-  });
-  $('.peakTime').click(function() {
-    total = ticket.raisePrice();
-  });
+  var children = 0;
+  var adult = 0;
+  var experienced = 0;
+  var ticket = new Ticket(children, adult, experienced);
   $("#the-form").submit(function(event) {
     event.preventDefault();
-    var children = $('#childrenInput').val();
-    var adult = $('#adultInput').val();
-    var experienced = $('#experiencedInput').val();
+    $('#show-totalPrice').show();
+    var childrenCount = $('#childrenInput').val();
+    var adultCount = $('#adultInput').val();
+    var experiencedCount = $('#experiencedInput').val();
+    var movieTime = $('#selectTime').val();
+    if(movieTime === "normalTime") {
+      ticket.setBasePrice();
+    } else {
+      ticket.raisePrice();
+    }
+    var total = ticket.calculateTotal(childrenCount, adultCount, experiencedCount);
     $(".total").text(total);
-    $('#childrenPrice, #adultPrice, #experiencedPrice').show();
+    // $('#childrenPrice, #adultPrice, #experiencedPrice').show();
+
+
     $('.input-number-increment').click(function() {
       var $input = $(this).parents('.input-number-group').find('.input-number');
-
       var val = parseInt($input.val(), 10);
-      console.log(val);
       $input.val(val + 1);
     });
 
