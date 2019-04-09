@@ -41,7 +41,7 @@
               <div class="input-group-button">
                 <span class="input-number-decrement">-</span>
               </div>
-              <input id="childrenInput" class="input-number" type="number" value="1" min="0" max="1000">
+              <input id="childrenInput" class="input-number" type="number" value="0" min="0" max="1000">
               <div class="input-group-button">
                 <span class="input-number-increment">+</span>
               </div>
@@ -54,7 +54,7 @@
               <div class="input-group-button">
                 <span class="input-number-decrement">-</span>
               </div>
-              <input id="adultInput"class="input-number" type="number" value="1" min="0" max="1000">
+              <input id="adultInput"class="input-number" type="number" value="0" min="0" max="1000">
               <div class="input-group-button">
                 <span class="input-number-increment">+</span>
               </div>
@@ -67,7 +67,7 @@
               <div class="input-group-button">
                 <span class="input-number-decrement">-</span>
               </div>
-              <input id="experiencedInput"class="input-number" type="number" value="1" min="0" max="1000">
+              <input id="experiencedInput"class="input-number" type="number" value="0" min="0" max="1000">
               <div class="input-group-button">
                 <span class="input-number-increment">+</span>
               </div>
@@ -78,10 +78,17 @@
         <button id="submitButton" type="submit" name="button">Buy Tickets</button>
       </form>
     </div>
-    <div class="col-md-6">
-          <div id="show-totalPrice">
-            <p>Your total is: <span class="total"></span></p>
-
+    <div class="jumbotron" id="ticketsbanner">
+      <h1 class="display-4"><div id="show-totalPrice">
+        <p>Your total is: <span class="total"></span></p></div></h1>
+      <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+      <p class="lead">
+      </p>
+      <div id="show-totalPrice">
+        <p>Your total is: <span class="total"></span></p>
+      </div>
     </div>
 
   </body>

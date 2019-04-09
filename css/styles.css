@@ -2,6 +2,7 @@ body {
   /* background-image: url("https://0f469d6f2fa468202d31-6b0d87410f7cc1525cc32b79408788c4.ssl.cf2.rackcdn.com/3914/88675454_1.jpg");
   background-color: #cccccc; */
   font-family: 'Bree Serif', serif;
+  background-image: linear-gradient(purple, green, yellow, brown, pink, maroon, purple, brown);
 }
 
 h1 {
