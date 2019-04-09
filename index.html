@@ -10,7 +10,6 @@
   </head>
   <body>
     <h1>Epicodus Grand Theater</h1>
-    </div>
     <div class="jumbotron" id="ticketsbanner">
       <h1 class="display-4">TICKETS</h1>
       <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -19,42 +18,66 @@
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
       </p>
-  </div>
+    </div>
 
   <div class="movieListing">
     <img src="img/ki1.jpg" alt="Kazaam Movie">
     <p>Kazaam (/kəˈzæm/) is a 1996 American musical fantasy comedy film directed by Paul Michael Glaser, written by Christian Ford and Roger Soffer based on a story by Glaser, and starring Shaquille O'Neal as the title character, a "5,000"-year-old genie who appears from a magic boombox </p>
-    <button class="buttons" type="button" name="button">12:05pm</button>
-    <button class="buttons" type="button" name="button">2:10pm</button>
-    <button class="buttons" type="button" name="button">4:20pm</button>
-    <button class="buttons" type="button" name="button">6:30pm</button>
-    <button class="buttons" type="button" name="button">8:05pm</button>
+    <button class="buttons normalTime" type="button" name="button">12:05pm</button>
+    <button class="buttons normalTime" type="button" name="button">2:10pm</button>
+    <button class="buttons peakTime" type="button" name="button">4:20pm</button>
+    <button class="buttons peakTime" type="button" name="button">6:30pm</button>
+    <button class="buttons normalTime" type="button" name="button">8:05pm</button>
   </div>
     <div class="container" id="tickets">
-      <div class="row">
-        <div class="col-sm">
-          Children
-          <div class="input-group input-number-group">
-            <div class="input-group-button">
-              <span class="input-number-decrement">-</span>
+      <form id="the-form" action="index.html" method="post">
+        <div class="row">
+          <div class="col-sm">
+            Children
+            <div class="input-group input-number-group">
+              <div class="input-group-button">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="childrenInput" class="input-number" type="number" value="1" min="0" max="1000">
+              <div class="input-group-button">
+                <span class="input-number-increment">+</span>
+              </div>
             </div>
-            <input class="input-number" type="number" value="1" min="0" max="1000">
-            <div class="input-group-button">
-              <span class="input-number-increment">+</span>
+            <p id=childrenPrice>$2.00</p>
+          </div>
+          <div class="col-sm">
+            Adult
+            <div class="input-group input-number-group">
+              <div class="input-group-button">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="adultInput"class="input-number" type="number" value="1" min="0" max="1000">
+              <div class="input-group-button">
+                <span class="input-number-increment">+</span>
+              </div>
             </div>
+            <p id=adultPrice>$4.00</p>
+          </div>
+          <div class="col-sm">
+            Senior
+            <div class="input-group input-number-group">
+              <div class="input-group-button">
+                <span class="input-number-decrement">-</span>
+              </div>
+              <input id="experiencedInput"class="input-number" type="number" value="1" min="0" max="1000">
+              <div class="input-group-button">
+                <span class="input-number-increment">+</span>
+              </div>
+            </div>
+            <p id=experiencedPrice>$4.00</p>
           </div>
         </div>
-        <div class="col-sm">
-          Adult
-        </div>
-        <div class="col-sm">
-          Experienced
-        </div>
-        <div class="col-sm">
-          Matinee
-        </div>
-      </div>
+        <button id="submitButton" type="submit" name="button">Buy Tickets</button>
+      </form>
     </div>
+    <div class="col-md-6">
+          <div id="show-totalPrice">
+            <p>total <span class="total"></span></p>
 
     </div>
 
